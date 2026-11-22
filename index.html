@@ -65,6 +65,8 @@ p{margin:0 0 16px;max-width:66ch}
 .entry ul{margin:6px 0 0;padding-left:20px;max-width:64ch}
 .entry li{margin-bottom:5px;font-size:17px;line-height:1.55}
 .tools{font-family:var(--sans);font-size:14.5px;color:var(--soft);margin:8px 0 0}
+.entry .what{margin:2px 0 8px;font-size:17.5px;line-height:1.55;max-width:64ch}
+.entry .link{font-size:16.5px;font-style:italic;color:var(--soft);margin:8px 0 0;max-width:64ch;line-height:1.5}
 
 h2.sub{margin-top:36px;color:var(--soft)}
 
@@ -143,11 +145,14 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2025 – Present</div>
         <div>
           <h3>PitchIQ: a multi-agent sales-outreach system</h3>
+          <p class="what">PitchIQ is a sales-outreach application built on LangGraph. Instead of one model writing a message in a single step, several AI agents share the task, and one of them reviews the result.</p>
           <ul>
-            <li>Designed a multi-agent architecture in which research, drafting, and review agents work together to generate personalised outreach.</li>
-            <li>Implemented RAG retrieval and output guardrails so responses stay grounded in source data and within policy.</li>
+            <li>Designed the multi-agent architecture: a research agent gathers information, a drafting agent writes the outreach, and a review agent checks it, with LangGraph orchestrating the hand-offs between them.</li>
+            <li>Implemented retrieval-augmented generation (RAG) with ChromaDB and pgvector, so the agents write from retrieved source data and not from the model's memory alone.</li>
+            <li>Added output guardrails so that responses stay grounded in that source data and within policy before they are used.</li>
           </ul>
-          <p class="tools">LangGraph, ChromaDB, pgvector</p>
+          <p class="link">How it connects to my research interests: keeping an agent's output tied to its evidence is the same problem, in a business setting, that I want to study for healthcare.</p>
+          <p class="tools">LangGraph, RAG, ChromaDB, pgvector</p>
         </div>
       </div>
 
@@ -155,11 +160,13 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2024 – Present</div>
         <div>
           <h3>MCP server layer for autonomous tool discovery and execution</h3>
+          <p class="what">The Model Context Protocol (MCP) is a standard way for AI assistants to connect to outside tools and data. I built an MCP server layer so that an assistant can work with enterprise data tools without each one being wired in by hand.</p>
           <ul>
-            <li>Built a Model Context Protocol (MCP) server that exposes database and ETL tools, so LLM assistants can discover, select, and run them on their own across SQL and NoSQL databases and cloud applications.</li>
-            <li>Exposed the connector logic through FastAPI REST endpoints.</li>
+            <li>Built the MCP server to expose database and ETL tools, so LLM assistants can discover what is available, select the right tool, and run it on their own across SQL and NoSQL databases and cloud applications.</li>
+            <li>Built FastAPI REST endpoints on top of the connector code, so ETL jobs and MCP tools can also be triggered over HTTP by AI agents and other services.</li>
             <li>Managed credentials and connector configuration in MongoDB.</li>
           </ul>
+          <p class="link">How it connects to my research interests: tool discovery and tool use are core parts of agentic AI.</p>
           <p class="tools">MCP, FastAPI, MongoDB</p>
         </div>
       </div>
@@ -168,10 +175,13 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2025 – 2026</div>
         <div>
           <h3>Guideline checker using generative AI and embeddings</h3>
+          <p class="what">A generative AI tool that reads a document and checks whether it follows a given set of guidelines, such as industry standards or regulatory requirements.</p>
           <ul>
-            <li>Developed a generative AI tool that uses embeddings to check documents and content for compliance with guidelines such as industry standards and regulatory requirements.</li>
-            <li>The tool produces detailed compliance reports with suggestions for improvement.</li>
+            <li>Used embeddings to compare the content of documents against the guidelines they are supposed to follow.</li>
+            <li>The tool analyses documents and content for adherence to the specified guidelines and produces a detailed compliance report.</li>
+            <li>Each report includes suggestions for improvement, so the output can be acted on directly.</li>
           </ul>
+          <p class="link">How it connects to my research interests: checking content against stated rules is one form of verifying what a model or a person has produced.</p>
           <p class="tools">Generative AI, embeddings</p>
         </div>
       </div>
@@ -180,11 +190,14 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2024 – 2025</div>
         <div>
           <h3>ETL cloud data-transfer pipeline</h3>
+          <p class="what">A pipeline that moves data between databases and cloud applications on a schedule, built to replace manual transfers and one-off scripts.</p>
           <ul>
-            <li>Built a scheduled pipeline, orchestrated in n8n, that moves data between SQL and NoSQL databases and cloud applications, replacing manual transfers and one-off scripts.</li>
-            <li>Added error handling and failure notifications so broken runs are caught and re-run.</li>
+            <li>Built the pipeline in n8n, moving data between SQL and NoSQL databases and cloud applications at scheduled times.</li>
+            <li>Managed connector configurations and credentials in MongoDB.</li>
+            <li>Added error handling and failure notifications, so broken runs are caught and re-run.</li>
           </ul>
-          <p class="tools">n8n, SQL and NoSQL databases</p>
+          <p class="link">How it connects to my research interests: dependable data movement is the base layer of AI-ready data infrastructure.</p>
+          <p class="tools">n8n, SQL and NoSQL databases, MongoDB</p>
         </div>
       </div>
 
@@ -192,12 +205,14 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2019 – 2020</div>
         <div>
           <h3>Pneumonia detection from chest X-rays using deep CNNs</h3>
+          <p class="what">My Bachelor of Technology project: a deep learning model that looks at a chest X-ray and classifies it, intended as a fast and consistent first-pass check.</p>
           <ul>
-            <li>Trained a convolutional neural network to classify chest X-ray images as normal, bacterial pneumonia, or viral pneumonia, using a labelled public dataset.</li>
-            <li>Reached about 90% test accuracy.</li>
-            <li>Bachelor of Technology project, presented at a university-level project expo.</li>
+            <li>Developed a convolutional neural network in TensorFlow and Keras that classifies chest X-ray images into three classes: normal, bacterial pneumonia, and viral pneumonia.</li>
+            <li>Trained the model on a labelled public chest X-ray dataset; it reached about 90% test accuracy.</li>
+            <li>Led the project team and presented the work at a university-level project expo.</li>
           </ul>
-          <p class="tools">TensorFlow, Keras</p>
+          <p class="link">How it connects to my research interests: this is the project that started my interest in the medical side of AI.</p>
+          <p class="tools">TensorFlow, Keras, convolutional neural networks</p>
         </div>
       </div>
 
@@ -207,9 +222,58 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2025 – 2026</div>
         <div>
           <h3>Agents and tools for agentic AI</h3>
+          <p class="what">Work on bringing agentic AI into several existing solutions, by building the agents and the tools they call.</p>
           <ul>
-            <li>Developed and integrated agents and tools to bring agentic AI into several existing solutions.</li>
+            <li>Developed and integrated a range of agents and tools across multiple solutions.</li>
             <li>The agents automate routine steps, improve user interaction, and streamline processes across the applications.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2025 – Present</div>
+        <div>
+          <h3>NLP for customer support</h3>
+          <p class="what">Natural language processing used to automate parts of a customer support workflow.</p>
+          <ul>
+            <li>Implemented the solution with NLTK, spaCy, and word embeddings.</li>
+            <li>Applied text classification, sentiment analysis, and tokenization to streamline response times across large volumes of text.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2025 – Present</div>
+        <div>
+          <h3>Caption and alt-text generation</h3>
+          <p class="what">A generative AI solution that writes captions and alt-text for images.</p>
+          <ul>
+            <li>Built it with transformer models to generate accurate captions and alt-text automatically.</li>
+            <li>The output improves accessibility and the experience of users who rely on text descriptions of images.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2025 – Present</div>
+        <div>
+          <h3>Audio transcriber migration from AssemblyAI to Whisper</h3>
+          <p class="what">Moved an audio transcription system from a closed-source service to an open-source model.</p>
+          <ul>
+            <li>Migrated the system from AssemblyAI to Whisper while maintaining high transcription accuracy.</li>
+            <li>The move improved how far the system can be customised and reduced dependence on proprietary software.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2025 – Present</div>
+        <div>
+          <h3>Video-to-text transcriber</h3>
+          <p class="what">A generative AI solution that turns video content into text.</p>
+          <ul>
+            <li>Included speaker identification, timestamping, and context-aware transcription.</li>
+            <li>The transcripts improve accessibility and make video content easy to search and analyse.</li>
           </ul>
         </div>
       </div>
@@ -218,9 +282,10 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2024 – 2025</div>
         <div>
           <h3>RFP bot using LLM embeddings</h3>
+          <p class="what">A bot that helps a team respond to requests for proposals (RFPs) by reading the documents and ranking them.</p>
           <ul>
-            <li>Built an LLM-based bot that uses BERT embeddings, named entity recognition, and TF-IDF to analyse and rank request-for-proposal documents.</li>
-            <li>Applied prompt engineering for accurate information extraction, reducing proposal response time.</li>
+            <li>Built the bot with BERT embeddings, named entity recognition, and TF-IDF to analyse and rank RFP documents.</li>
+            <li>Applied prompt engineering for accurate information extraction, which reduced proposal response time and improved document analysis.</li>
           </ul>
         </div>
       </div>
@@ -229,9 +294,10 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2024 – 2025</div>
         <div>
           <h3>SQL query generator</h3>
+          <p class="what">A generative AI tool that writes the SQL queries used to validate data, starting from an Excel mapping document.</p>
           <ul>
-            <li>Developed a generative AI tool that writes validation SQL queries from an Excel mapping document, automating query creation.</li>
-            <li>Added a validation step that checks the generated queries against the database schema.</li>
+            <li>Automated query creation: the tool generates validation SQL queries from the mapping document, supporting data accuracy.</li>
+            <li>Added a validation feature that checks the generated queries against the database schema for correctness.</li>
           </ul>
         </div>
       </div>
@@ -240,8 +306,9 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
         <div class="when">2020</div>
         <div>
           <h3>AWS three-tier infrastructure deployment</h3>
+          <p class="what">A secure three-tier web application setup on AWS, with the infrastructure defined in code.</p>
           <ul>
-            <li>Designed and deployed a secure three-tier web architecture on AWS (EC2, RDS, S3, React front end) with least-privilege IAM policies.</li>
+            <li>Designed and deployed the architecture on AWS using EC2, RDS, and S3, with a React front end and least-privilege IAM policies.</li>
             <li>Automated provisioning with Terraform.</li>
           </ul>
         </div>
@@ -361,7 +428,7 @@ footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px
 
     <section id="beyond">
       <h2>Beyond work</h2>
-      <p>Carnatic music (working towards the second level), classical dance, painting, trekking, badminton, and teaching. I speak English, Telugu, and Hindi.</p>
+      <p>Carnatic music (pursuing second level) | Classical dance | Painting | Trekking, Badminton | Teaching</p>
     </section>
 
     <footer>
