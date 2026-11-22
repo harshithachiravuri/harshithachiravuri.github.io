@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Harshitha Chiravuri</title>
+<meta name="description" content="Sri Harshitha Chiravuri: software engineer building agentic LLM systems, applying for Fall 2027 PhD programs in AI for healthcare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F7F6;
+  --panel:#E4EEEC;
+  --ink:#13272B;
+  --soft:#4A6166;
+  --teal:#0D5D63;
+  --rule:#C5D6D3;
+  --mark:#B5761A;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Figtree","Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.62}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:2px solid var(--mark);outline-offset:3px;border-radius:2px}
+
+.page{display:grid;grid-template-columns:300px minmax(0,1fr);max-width:1180px;margin:0 auto}
+
+/* left rail */
+.rail{position:sticky;top:0;align-self:start;height:100vh;padding:56px 36px 40px 40px;display:flex;flex-direction:column;border-right:1px solid var(--rule)}
+.rail h1{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.01em}
+.rail .where{font-family:var(--sans);font-size:15px;color:var(--soft);margin:0 0 30px;line-height:1.45}
+.rail nav{font-family:var(--sans);font-size:15.5px}
+.rail nav a{display:block;padding:5px 0;color:var(--ink);text-decoration:none}
+.rail nav a:hover{color:var(--teal);text-decoration:underline}
+.rail .reach{margin-top:auto;font-family:var(--sans);font-size:15px;line-height:1.9}
+.rail .cv{display:inline-block;margin-top:10px;padding:9px 16px;background:var(--teal);color:#fff;text-decoration:none;border-radius:4px;font-weight:500}
+.rail .cv:hover{background:var(--ink);color:#fff}
+
+/* main */
+main{padding:56px 48px 80px 56px;min-width:0}
+section{padding:0 0 56px}
+section + section{border-top:1px solid var(--rule);padding-top:48px}
+h2{font-family:var(--sans);font-weight:600;font-size:17px;color:var(--teal);margin:0 0 22px}
+p{margin:0 0 16px;max-width:66ch}
+
+.lead{font-size:34px;line-height:1.25;font-weight:400;letter-spacing:-0.012em;max-width:22em;margin:0 0 26px}
+
+/* research interests: the one loud element */
+.interests{list-style:none;margin:0;padding:0;background:var(--panel);border-left:4px solid var(--teal)}
+.interests li{padding:20px 26px;font-size:23px;line-height:1.3}
+.interests li + li{border-top:1px solid var(--rule)}
+.interests small{display:block;font-family:var(--sans);font-size:15px;color:var(--soft);margin-top:6px;line-height:1.45}
+
+/* dated entries */
+.entry{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 24px;padding:18px 0}
+.entry + .entry{border-top:1px solid var(--rule)}
+.entry .when{font-family:var(--sans);font-size:14.5px;color:var(--mark);font-weight:500;padding-top:5px}
+.entry h3{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.3;margin:0 0 4px}
+.entry .role{font-family:var(--sans);font-size:15px;color:var(--soft);margin:0 0 8px}
+.entry ul{margin:6px 0 0;padding-left:20px;max-width:64ch}
+.entry li{margin-bottom:5px;font-size:17px;line-height:1.55}
+.tools{font-family:var(--sans);font-size:14.5px;color:var(--soft);margin:8px 0 0}
+
+h2.sub{margin-top:36px;color:var(--soft)}
+
+/* skills */
+.skills{margin:0;display:grid;grid-template-columns:190px minmax(0,1fr);gap:10px 24px;max-width:780px}
+.skills dt{font-family:var(--sans);font-weight:600;font-size:15.5px;padding-top:2px}
+.skills dd{margin:0;font-size:17px;line-height:1.5}
+
+.plain{margin:0;padding-left:20px;max-width:66ch}
+.plain li{margin-bottom:7px}
+
+footer{font-family:var(--sans);font-size:14px;color:var(--soft);padding-top:28px;border-top:1px solid var(--rule)}
+
+@media (max-width:860px){
+  .page{display:block}
+  .rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--rule);padding:32px 22px 26px}
+  .rail nav{display:flex;flex-wrap:wrap;gap:2px 18px}
+  .rail .reach{margin-top:22px}
+  main{padding:32px 22px 56px}
+  .lead{font-size:26px}
+  .interests li{font-size:20px;padding:16px 18px}
+  .entry{grid-template-columns:1fr}
+  .entry .when{padding:0 0 4px}
+  .skills{grid-template-columns:1fr;gap:2px 0}
+  .skills dd{margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="rail">
+    <h1>Sri Harshitha Chiravuri</h1>
+    <p class="where">Software Development Engineer at Uniian LLC. Applying for PhD programs starting Fall 2027.</p>
+    <nav aria-label="Sections">
+      <a href="#research">Research interests</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#roles">Achievements and roles</a>
+      <a href="#beyond">Beyond work</a>
+    </nav>
+    <div class="reach">
+      <a href="mailto:srihc957@gmail.com">srihc957@gmail.com</a><br>
+      <a href="https://www.linkedin.com/in/sri-harshitha-chiravuri">LinkedIn</a><br>
+      <a class="cv" href="SriHarshithaChiravuri_CV.pdf">Download CV (PDF)</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <p class="lead">I build AI agents that use tools and retrieved evidence, and I want to make them reliable enough for healthcare and biomedical research.</p>
+      <p>I have four years of industry experience across agentic LLM systems, retrieval-augmented generation (RAG) pipelines, and cloud and DevOps engineering. My current work is on multi-agent applications and on the server layer that lets AI assistants find and run data tools on their own.</p>
+      <p>My degrees are in technology: a Master of Science in Data Science and a Bachelor of Technology in Information Technology. An early project of mine was a model that detects pneumonia from chest X-rays, and that project is where my interest in the medical side of AI began. For a PhD, I want to bring my engineering background to that problem.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research interests</h2>
+      <ul class="interests">
+        <li>Agentic AI and multi-agent systems for biomedical discovery
+          <small>Planning, tool use, and coordination between agents on scientific tasks.</small></li>
+        <li>Trustworthy, evidence-grounded large language models
+          <small>Retrieval grounding, guardrails, and checking what a model outputs before anyone relies on it.</small></li>
+        <li>AI-ready data infrastructure and MLOps for healthcare
+          <small>Pipelines and deployment practice that keep data and models dependable in production.</small></li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="entry">
+        <div class="when">2025 – Present</div>
+        <div>
+          <h3>PitchIQ: a multi-agent sales-outreach system</h3>
+          <ul>
+            <li>Designed a multi-agent architecture in which research, drafting, and review agents work together to generate personalised outreach.</li>
+            <li>Implemented RAG retrieval and output guardrails so responses stay grounded in source data and within policy.</li>
+          </ul>
+          <p class="tools">LangGraph, ChromaDB, pgvector</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2024 – Present</div>
+        <div>
+          <h3>MCP server layer for autonomous tool discovery and execution</h3>
+          <ul>
+            <li>Built a Model Context Protocol (MCP) server that exposes database and ETL tools, so LLM assistants can discover, select, and run them on their own across SQL and NoSQL databases and cloud applications.</li>
+            <li>Exposed the connector logic through FastAPI REST endpoints.</li>
+            <li>Managed credentials and connector configuration in MongoDB.</li>
+          </ul>
+          <p class="tools">MCP, FastAPI, MongoDB</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2025 – 2026</div>
+        <div>
+          <h3>Guideline checker using generative AI and embeddings</h3>
+          <ul>
+            <li>Developed a generative AI tool that uses embeddings to check documents and content for compliance with guidelines such as industry standards and regulatory requirements.</li>
+            <li>The tool produces detailed compliance reports with suggestions for improvement.</li>
+          </ul>
+          <p class="tools">Generative AI, embeddings</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2024 – 2025</div>
+        <div>
+          <h3>ETL cloud data-transfer pipeline</h3>
+          <ul>
+            <li>Built a scheduled pipeline, orchestrated in n8n, that moves data between SQL and NoSQL databases and cloud applications, replacing manual transfers and one-off scripts.</li>
+            <li>Added error handling and failure notifications so broken runs are caught and re-run.</li>
+          </ul>
+          <p class="tools">n8n, SQL and NoSQL databases</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2019 – 2020</div>
+        <div>
+          <h3>Pneumonia detection from chest X-rays using deep CNNs</h3>
+          <ul>
+            <li>Trained a convolutional neural network to classify chest X-ray images as normal, bacterial pneumonia, or viral pneumonia, using a labelled public dataset.</li>
+            <li>Reached about 90% test accuracy.</li>
+            <li>Bachelor of Technology project, presented at a university-level project expo.</li>
+          </ul>
+          <p class="tools">TensorFlow, Keras</p>
+        </div>
+      </div>
+
+      <h2 class="sub">More projects</h2>
+
+      <div class="entry">
+        <div class="when">2025 – 2026</div>
+        <div>
+          <h3>Agents and tools for agentic AI</h3>
+          <ul>
+            <li>Developed and integrated agents and tools to bring agentic AI into several existing solutions.</li>
+            <li>The agents automate routine steps, improve user interaction, and streamline processes across the applications.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2024 – 2025</div>
+        <div>
+          <h3>RFP bot using LLM embeddings</h3>
+          <ul>
+            <li>Built an LLM-based bot that uses BERT embeddings, named entity recognition, and TF-IDF to analyse and rank request-for-proposal documents.</li>
+            <li>Applied prompt engineering for accurate information extraction, reducing proposal response time.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2024 – 2025</div>
+        <div>
+          <h3>SQL query generator</h3>
+          <ul>
+            <li>Developed a generative AI tool that writes validation SQL queries from an Excel mapping document, automating query creation.</li>
+            <li>Added a validation step that checks the generated queries against the database schema.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2020</div>
+        <div>
+          <h3>AWS three-tier infrastructure deployment</h3>
+          <ul>
+            <li>Designed and deployed a secure three-tier web architecture on AWS (EC2, RDS, S3, React front end) with least-privilege IAM policies.</li>
+            <li>Automated provisioning with Terraform.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="when">Jun 2024 – Present</div>
+        <div>
+          <h3>Uniian LLC</h3>
+          <p class="role">Software Development Engineer</p>
+          <ul>
+            <li>Build MCP server architecture that lets AI assistants discover and run database and ETL tools for enterprise data integration.</li>
+            <li>Develop LangGraph-based agentic workflows with autonomous tool selection.</li>
+            <li>Implement RAG pipelines and AI guardrails for safe, context-aware LLM responses.</li>
+            <li>Build FastAPI REST layers for multi-cloud data-platform integration, and manage connector services and credentials in MongoDB.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Mar 2021 – Jul 2022</div>
+        <div>
+          <h3>Tata Consultancy Services</h3>
+          <p class="role">Systems Analyst (DevOps)</p>
+          <ul>
+            <li>Managed and automated CI/CD pipelines and AWS cloud infrastructure (EC2, S3, RDS, EKS, ECR, IAM, CloudWatch) for production environments.</li>
+            <li>Built fully automated Jenkins pipelines running from GitLab commit through SonarQube quality gate, OWASP dependency check, JFrog artifact publishing, and Docker image push to ECR, to deployment on Kubernetes (EKS).</li>
+            <li>Containerised monolithic applications into microservices.</li>
+            <li>Configured streaming log monitoring with Fluent Bit and CloudWatch.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">May 2021 – Sep 2021</div>
+        <div>
+          <h3>LastMileLabs</h3>
+          <p class="role">Research Associate</p>
+          <ul>
+            <li>Coordinated with data miners and analysts to extract and load multi-source data using SQL, Selenium, and Microsoft Office workflows.</li>
+            <li>Designed recurring dashboards that delivered feed-industry data across regions and business lines.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <div class="when">Jan 2023 – Apr 2024</div>
+        <div>
+          <h3>University of Alabama at Birmingham, USA</h3>
+          <p class="role">Master of Science in Data Science, GPA 3.80 / 4.00</p>
+          <p>Key coursework: Machine Learning, Deep Learning, Cloud Computing, Advanced Algorithms and Applications, Computer Security, Database Application Development, Numerical Linear Algebra, Modern Cryptography, Cyber Risk Management.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Aug 2016 – Oct 2020</div>
+        <div>
+          <h3>Vignan's Nirula Institute of Technology and Science for Women, Guntur, India</h3>
+          <p class="role">Bachelor of Technology in Information Technology, GPA 3.33 / 4.00</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>AI and machine learning</dt>
+        <dd>LLMs, Transformers, generative AI, prompt engineering, RAG, AI guardrails, agentic AI, Model Context Protocol, NLP, deep learning</dd>
+        <dt>Frameworks and libraries</dt>
+        <dd>LangChain, LangGraph, PyTorch, TensorFlow and Keras, FastAPI, scikit-learn</dd>
+        <dt>Data and vector stores</dt>
+        <dd>MySQL, MongoDB, SQL and NoSQL, ChromaDB, pgvector</dd>
+        <dt>Cloud and MLOps</dt>
+        <dd>AWS (EC2, S3, EKS, ECR, RDS, VPC, IAM, CloudWatch), Docker, Kubernetes, Terraform, Jenkins CI/CD, n8n</dd>
+        <dt>Programming and source control</dt>
+        <dd>Python, SQL, Java, YAML; Git, GitLab, JFrog Artifactory</dd>
+        <dt>Security and compliance</dt>
+        <dd>OWASP dependency scanning, least-privilege IAM design</dd>
+      </dl>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="entry">
+        <div class="when">May 2025</div>
+        <div>
+          <h3>CompTIA Security+ (SY0-701)</h3>
+          <p class="role">Valid through May 2028</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">In progress</div>
+        <div>
+          <h3>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles">
+      <h2>Achievements and roles</h2>
+      <ul class="plain">
+        <li>First place, National Mathematics Olympiad competitive examination.</li>
+        <li>Presented the pneumonia detection project at a university-level project expo.</li>
+        <li>Student in-charge of a fest event during the Bachelor of Technology.</li>
+        <li>Mentored peers in Software Quality Assurance and Cloud Computing (Information Technology department, batch of 2020).</li>
+        <li>Mentor and onboard junior colleagues, at Tata Consultancy Services and now at Uniian LLC.</li>
+      </ul>
+    </section>
+
+    <section id="beyond">
+      <h2>Beyond work</h2>
+      <p>Carnatic music (working towards the second level), classical dance, painting, trekking, badminton, and teaching. I speak English, Telugu, and Hindi.</p>
+    </section>
+
+    <footer>
+      Sri Harshitha Chiravuri, <a href="mailto:srihc957@gmail.com">srihc957@gmail.com</a>. Last updated November 2026.
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
